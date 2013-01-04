@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @cook.name %>
+</p>
+
+<p>
+  <b>Email:</b>
+  <%= @cook.email %>
+</p>
+
+<p>
+  <b>Password:</b>
+  <%= @cook.password %>
+</p>
+
+
+<%= link_to 'Edit', edit_cook_path(@cook) %> |
+<%= link_to 'Back', cooks_path %>
