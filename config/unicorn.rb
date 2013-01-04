@@ -12,7 +12,7 @@ pid "/var/wwwapps/cooking/shared/pids/unicorn.pid"
 
 if env == "production"
   working_directory "/var/wwwapps/cooking/current"
-  user "nginx", "web"
+  user "deployer", "web"
   shared_path = "/var/wwwapps/cooking/shared"
   stderr_path "#{shared_path}/log/unicorn.stderr.log"
   stdout_path "#{shared_path}/log/unicorn.stdout.log"
