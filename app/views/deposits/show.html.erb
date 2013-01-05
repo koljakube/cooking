@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Cook:</b>
+  <%= @deposit.cook %>
+</p>
+
+<p>
+  <b>Date:</b>
+  <%= @deposit.date %>
+</p>
+
+<p>
+  <b>Amount:</b>
+  <%= @deposit.amount %>
+</p>
+
+
+<%= link_to 'Edit', edit_deposit_path(@deposit) %> |
+<%= link_to 'Back', deposits_path %>
