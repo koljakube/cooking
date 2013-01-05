@@ -1,7 +1,7 @@
 class Deposit < ActiveRecord::Base
   belongs_to :cook
   
-  attr_accessible :amount, :cook, :date
+  attr_accessible :amount, :cook, :cook_id, :date
   
   validates :amount,
     presence: true,

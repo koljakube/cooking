@@ -1,5 +1,7 @@
 Cooking::Application.routes.draw do
   
+  resources :deposits
+
   resources :sessions
   resources :cooks
   
