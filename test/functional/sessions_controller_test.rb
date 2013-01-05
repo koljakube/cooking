@@ -26,7 +26,7 @@ class SessionsControllerTest < ActionController::TestCase
   
   test "can sign out" do
     sign_in_as_user
-    get :destroy
+    delete :destroy
     assert_nil session[:cook_id]
   end
     

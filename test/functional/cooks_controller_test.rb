@@ -8,7 +8,7 @@ class CooksControllerTest < ActionController::TestCase
   
   def complete_cook_hash
     cook = cook_data
-    { name: cook.name, email: cook.email, password: cook.password, password_confirmation: cook.password }
+    Hash[cook.members.zip(cook.values)]
   end
   
 
