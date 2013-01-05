@@ -3,7 +3,8 @@ class CreateCooks < ActiveRecord::Migration
     create_table :cooks do |t|
       t.string :name
       t.string :email
-      t.string :password
+      t.string :password_digest
+      t.boolean :admin, default: false
 
       t.timestamps
     end

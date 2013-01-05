@@ -1,8 +1,20 @@
 require 'test_helper'
 
 class CooksControllerTest < ActionController::TestCase
+  
+  def cook_data
+    Struct.new(:name, :email, :password).new('Mal', 'captn@serenity.space', 'f1r3fly')
+  end
+  
+  def complete_cook_hash
+    cook = cook_data
+    { name: cook.name, email: cook.email, password: cook.password, password_confirmation: cook.password }
+  end
+  
+
   setup do
-    @cook = cooks(:one)
+    sign_in_as_user
+    @cook = cooks(:normal_cook)
   end
 
   test "should get index" do
@@ -18,7 +30,7 @@ class CooksControllerTest < ActionController::TestCase
 
   test "should create cook" do
     assert_difference('Cook.count') do
-      post :create, cook: { email: @cook.email, name: @cook.name, password: @cook.password }
+      post :create, cook: complete_cook_hash
     end
 
     assert_redirected_to cook_path(assigns(:cook))
@@ -35,7 +47,7 @@ class CooksControllerTest < ActionController::TestCase
   end
 
   test "should update cook" do
-    put :update, id: @cook, cook: { email: @cook.email, name: @cook.name, password: @cook.password }
+    put :update, id: @cook, cook: complete_cook_hash.slice(:name, :email)
     assert_redirected_to cook_path(assigns(:cook))
   end
 
