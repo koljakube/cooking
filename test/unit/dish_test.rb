@@ -22,4 +22,12 @@ class DishTest < ActiveSupport::TestCase
     refute dish.save
   end
   
+  test "prices are saved as integers, exposed as floats" do
+    dish = Dish.create({ name: "Some Dish", price: 1999, date: Date.today })
+    assert_equal 19.99, dish.price
+    dish.price = 23.45
+    assert_equal 23.45, dish.price
+    assert_equal 2345, dish[:price]
+  end
+  
 end
