@@ -15,4 +15,4 @@ production:
   encoding: unicode
   database: cooking
   pool: 5
-  username: kkube
+  username: deployer
