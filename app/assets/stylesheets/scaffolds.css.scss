@@ -1,5 +1,5 @@
 body {
-  background-color: #fff;
+  background-color: #4f81bd;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
@@ -66,4 +66,12 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+
+#content {
+  background-color: #fff;
+  width: 950px;
+  margin: 50px auto;
+  padding: 25px;
+  border: 1px solid #333;
 }
