@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Cooking</title>
-  <%= stylesheet_link_tag    "application", :media => "all" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Cooking</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div id="content">
+      <div id="flashes">
+        <% flash.each do |name, message| %>
+        <div class="<%= name %>">
+          <%= message %>
+        </div>
+        <% end %>
+      </div>
+      <div id="navigation">
+        <%= link_to "Log out", sign_out_path, method: :delete %>
+      </div>
+      <%= yield %>
+    </div>
+  </body>
 </html>
