@@ -1,0 +1,9 @@
+dish1:
+  name: Holistic Hamburgers
+  price: 850
+  date: 2013-01-04
+
+dish2:
+  name: Seaweed Sandwiches
+  price: 1299
+  date: 2013-01-03
