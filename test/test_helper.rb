@@ -6,10 +6,10 @@ class ActiveSupport::TestCase
   fixtures :all
     
   def sign_in_as_admin
-    session[:cook_id] = cooks(:admin_cook).find.id
+    session[:cook_id] = cooks(:admin_cook).id
   end
   def sign_in_as_user
-    session[:cook_id] = cooks(:normal_cook).find.id
+    session[:cook_id] = cooks(:normal_cook).id
   end
   def sign_out
     session[:cook_id] = nil
